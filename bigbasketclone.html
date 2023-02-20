@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<ul>
+  <li><a class="active" href="">Home</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="about.html">About</a></li>
+</ul>
+
+<div class="about-section">
+  <h1><span style="color:tomato;">Big<span style="color:white;">basket</em></h1>
+  <p>India's Largest online grocery shop</p>
+<marquee>Wide range of groceries at lowest price!it can't get bigger than this</marquee>
+</div>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="https://cdn.grabon.in/gograbon/images/merchant/1549094966822.png" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://www.bandhanbank.com/sites/default/files/2021-09/Bandhan_BigBasket_Offer_Banner_01.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="https://i0.wp.com/offers.getsimpl.com/wp-content/uploads/2020/11/bb-1.jpg?resize=409%2C256&ssl=1" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+<h2 style="text-align:center">New Arrivals</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKS9l_vj_q_DbTqMiYJr7yjZEYNAEjex4v5Q&usqp=CAU" alt="Badam" style="width:100%;">
+      <div class="container">
+        <h2>Badam</h2>
+        <p class="title">Freshly and handpicked badam from the farm </p>
+        <p>Buy now!!!flat 20%off</h3></p>
+        <p><h3>Rs.500/kg</p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button" hover><b>Order now!!!</b></button></a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXgPba9Jp4t9ncAFRgwxo_5HgQ5tqGELMa5g&usqp=CAU" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Ready made roti</h2>
+        <p class="title">half cooked roti package</p>
+        <p>30%off at UPI payment</p>
+        <p>Rs.20/roti<em>inclusive of all tax</em></p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button" hover><b>order now</b></button></a></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="https://www.bigbasket.com/media/uploads/p/xxl/40049232_3-bb-popular-toor-dal-madhi-oily.jpg" alt="" style="width:100%" title="veg">
+      <div class="container">
+        <h2>Toor dhal</h2>
+        <p class="title"></p>
+        <p>Arrive at your doorstep at just two hours...</p>
+        <p title="pay online get offer">Flat 25%off</p>
+        <p><h3>Rs.50/kg</h3><em>inclusive of all tax</em></p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button" hover><b>order now</b></button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+    <div class="card">
+      <img src="https://www.bigbasket.com/media/uploads/p/xxl/229939-6_5-real-fruit-power-juice-cranberry.jpg" alt="juice" style="width:100%" title="veg">
+      <div class="container">
+        <h2>Real Fresh</h2>
+        <p class="title"></p>
+        <p>Real Activ 100 % Apple Juice - With No Added Sugar and Preservative, 3x1 L Multipack</p>
+        <p title="pay online get offer">Flat 25%off</p>
+        <p><h3>Rs.20/l</h3><em>inclusive of all tax</em></p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button" hover><b>order now</b></button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+    <div class="card">
+      <img src="https://www.bigbasket.com/media/uploads/p/l/40162520_3-rin-advanced-detergent-powder.jpg" alt="juice" style="width:100%" title="veg">
+      <div class="container">
+        <h2>Real Fresh</h2>
+        <p class="title"></p>
+        <p>Rin Advanced Detergent Powder, 7 kg
+           Price:
+           Rs 745
+           (Rs.106.43/kg)
+           You Save:
+           10
+          </p>
+          <p>Flat upto 40%off</p>
+        <p><h3>Rs.106.43/kg</h3><em>inclusive of all tax</em></p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button" hover><b>order now</b></button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+    <div class="card">
+      <img src="https://www.bigbasket.com/media/uploads/p/l/40093248_2-himalaya-wellness-hand-sanitizer-green-apple-pure-hands.jpg" alt="juice" style="width:100%" title="veg">
+      <div class="container">
+        <h2>Himalaya</h2>
+        <p class="title"></p>
+        <p>Himalaya Sanitizer-Green Apple, Kills 99.9% of Germs, Self Drying Gel.</p>
+          <p>Flat upto 40%off</p>
+        <p><h3>Rs.50/100ml</h3><em>inclusive of all tax</em></p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button" hover><b>order now</b></button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+    <div class="card">
+      <img src="https://www.bigbasket.com/media/uploads/p/l/280721_1-volini-pain-relief-gel.jpg" alt="juice" style="width:100%" title="veg">
+      <div class="container">
+        <h2>Volini</h2>
+        <p class="title"></p>
+        <p>Volini Pain Relief Gel, 15 g</p>
+          <p>Flat upto 40%off</p>
+        <p><h3>MRP:Rs 65(Rs.4.33/g)</h3><em>inclusive of all tax</em></p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button" hover><b>order now</b></button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+    <div class="card">
+      <img src="https://www.bigbasket.com/media/uploads/p/l/1208232_1-bb-combo-saffola-total-pro-heart-conscious-edible-oil-2l-bb-popular-toorarhar-dal-1kg.jpg" alt="juice" style="width:100%" title="veg">
+      <div class="container">
+        <h2>Saffola</h2>
+        <p class="title"></p>
+        <p>Pro Heart Conscious Edible Oil 2L + BB Popular Toor/Arhar Dal 1kg,Combo(2Items)</p>
+          <p>Flat upto 40%off</p>
+        <p><h3>MRP:Rs 250/l</h3><em>inclusive of all tax</em></p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button" hover><b>order now</b></button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+    <div class="card">
+      <img src="https://www.bigbasket.com/media/uploads/p/l/287005_12-sunfeast-yippee-magic-masala-noodles.jpg" alt="juice" style="width:100%" title="veg">
+      <div class="container">
+        <h2>Yippee</h2>
+        <p class="title"></p>
+        <p>Sunfeast YiPPee!<br> 
+        Magic Masala Instant Noodles,<br>60 g Pouch </p>
+          <p>Flat upto 40%off</p>
+        <p><h3>MRP:Rs 25/2packs</h3><em>inclusive of all tax</em></p>
+        <p>Quantity:<input type="number" name="quantity" min="1" max="5"></p>
+        <p><a href="orderform.html"><button class="button"><b>order now</b></button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
